@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristiano Silvester — Músico | Repertório e Contratação</title>
+<meta name="description" content="Cristiano Silvester, músico para bares, festas, casamentos e eventos. Veja o repertório completo por estilo e monte o setlist do seu evento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --bg:#0e0f0e;
+    --card:#171917;
+    --card-2:#1e211e;
+    --linha:#2a2e2a;
+    --verde:#1ed760;
+    --verde-escuro:#0f3d22;
+    --verde-medio:#145c30;
+    --texto:#f2f4f2;
+    --suave:#8f988f;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter Tight',system-ui,sans-serif;
+    background:var(--bg);color:var(--texto);line-height:1.5;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    padding-bottom:84px;
+  }
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+  .kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--suave)}
+  .kicker.verde{color:var(--verde)}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(14,15,14,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--linha);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:.6rem}
+  .brand-mark{
+    width:38px;height:38px;border-radius:50%;background:var(--verde);color:#062b14;
+    display:grid;place-items:center;font-size:1rem;
+  }
+  .brand b{display:block;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;line-height:1}
+  .brand small{font-size:.6rem;letter-spacing:.3em;color:var(--verde);font-weight:700}
+  .top-links{display:flex;gap:1.4rem;font-size:.88rem;color:var(--suave);font-weight:500}
+  .top-links a:hover{color:var(--texto)}
+  .btn-top{
+    display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:700;
+    padding:.5rem .95rem;border-radius:999px;background:var(--verde);color:#062b14;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:40px 0 10px}
+  .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+  .hero h1{
+    font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;
+    margin-top:.6rem;
+  }
+  .vol{text-align:right;color:#444b44;font-weight:700}
+  .vol span{display:block;font-size:.62rem;letter-spacing:.2em}
+  .vol b{font-size:2.6rem;font-weight:500;line-height:1}
+  .hero p.lead{color:var(--suave);max-width:520px;margin-top:1rem;font-size:1rem}
+
+  .search{
+    margin-top:1.6rem;display:flex;align-items:center;gap:.7rem;
+    background:var(--card);border:1px solid var(--linha);border-radius:999px;padding:.85rem 1.2rem;
+  }
+  .search i{color:var(--suave)}
+  .search input{
+    flex:1;background:none;border:none;outline:none;color:var(--texto);font:inherit;font-size:.95rem;min-width:0;
+  }
+  .search input::placeholder{color:var(--suave)}
+  .search .tag{font-size:.6rem;letter-spacing:.16em;color:#566056;font-weight:700}
+
+  /* ---------- BANNER ---------- */
+  .banner{
+    margin-top:1.4rem;position:relative;overflow:hidden;border-radius:22px;
+    background:linear-gradient(135deg,var(--verde-medio),var(--verde-escuro) 70%);
+    padding:28px 24px 34px;min-height:300px;border:1px solid #1d5a33;
+  }
+  .banner .pill{
+    display:inline-block;font-size:.6rem;letter-spacing:.14em;font-weight:700;
+    border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:.3rem .55rem;color:#cfe9d7;
+  }
+  .banner h2{font-size:clamp(2rem,6vw,3.4rem);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-top:1.4rem;max-width:560px;position:relative;z-index:2}
+  .banner p{color:#cfe9d7;font-size:.9rem;margin-top:.9rem;max-width:340px;position:relative;z-index:2}
+  .btn-verde{
+    display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;
+    background:var(--verde);color:#062b14;font-weight:700;font-size:.9rem;
+    padding:.8rem 1.3rem;border-radius:999px;position:relative;z-index:2;
+    transition:transform .15s ease;
+  }
+  .btn-verde:hover{transform:scale(1.03)}
+  .vinil{
+    position:absolute;right:-90px;top:50%;transform:translateY(-50%);
+    width:300px;height:300px;border-radius:50%;
+    background:repeating-radial-gradient(circle,#0b1f13 0 2px,#10301c 2px 5px);
+    animation:gira 14s linear infinite;opacity:.9;
+  }
+  .vinil::after{
+    content:"CRISTIANO\A SILVESTER";white-space:pre;position:absolute;inset:0;margin:auto;
+    width:110px;height:110px;border-radius:50%;background:var(--verde);color:#062b14;
+    display:grid;place-items:center;text-align:center;font-weight:800;font-size:.72rem;line-height:1.1;
+  }
+  @keyframes gira{to{transform:translateY(-50%) rotate(360deg)}}
+  .banner .rodape{
+    position:absolute;left:24px;right:24px;bottom:12px;display:flex;justify-content:space-between;
+    font-size:.55rem;letter-spacing:.16em;color:#8fbf9f;font-weight:700;z-index:2;
+  }
+  .banner .rodape span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--verde);margin-right:.4rem}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:28px 0 8px;border-bottom:1px solid var(--linha)}
+  .stats b{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:700;letter-spacing:-.03em}
+  .stats small{display:block;color:var(--suave);font-size:.72rem}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:40px 0 10px;scroll-margin-top:70px}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1.1rem}
+  .sec-head h2{font-size:clamp(1.4rem,4vw,1.9rem);font-weight:700;letter-spacing:-.025em;margin-top:.3rem}
+  .sec-head .link{font-size:.78rem;color:var(--suave);white-space:nowrap}
+  .sec-head .link:hover{color:var(--verde)}
+
+  /* Estilos (carrossel) */
+  .estilos{display:flex;gap:.9rem;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+  .estilos::-webkit-scrollbar{height:4px}
+  .estilos::-webkit-scrollbar-thumb{background:var(--linha);border-radius:4px}
+  .estilo{
+    flex:0 0 170px;scroll-snap-align:start;background:var(--card);border:1px solid var(--linha);
+    border-radius:14px;padding:10px;text-align:left;transition:border-color .15s ease,transform .15s ease;
+  }
+  .estilo:hover{transform:translateY(-3px)}
+  .estilo.ativo{border-color:var(--verde)}
+  .arte{aspect-ratio:1;border-radius:8px;position:relative;overflow:hidden;margin-bottom:.7rem}
+  .arte svg{width:100%;height:100%;display:block}
+  .arte .num{position:absolute;top:6px;left:8px;font-size:.6rem;font-weight:700;opacity:.6;color:#000}
+  .estilo small{font-size:.66rem;color:var(--suave)}
+  .estilo b{display:block;font-size:.95rem;font-weight:700;margin:.1rem 0}
+  .estilo .rodape{display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:var(--suave)}
+  .estilo .rodape i{font-size:.7rem;color:var(--verde)}
+
+  /* Chips */
+  .chips{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:6px}
+  .chip{
+    flex-shrink:0;padding:.55rem 1rem;border-radius:999px;font-size:.82rem;font-weight:600;
+    background:var(--card-2);color:var(--texto);border:1px solid var(--linha);
+  }
+  .chip.ativo{background:var(--texto);color:#0e0f0e;border-color:var(--texto)}
+  .chip .qtd{opacity:.55;font-weight:500;margin-left:.3rem}
+  .ocasiao-info{display:flex;justify-content:space-between;align-items:center;margin:1rem 0 .4rem;font-size:.78rem;color:var(--suave);gap:1rem}
+  .ocasiao-info button{color:var(--verde);font-weight:600;font-size:.78rem;white-space:nowrap}
+
+  /* Lista de músicas */
+  .lista{list-style:none}
+  .musica{
+    display:flex;align-items:center;gap:.9rem;padding:.8rem .3rem;border-bottom:1px solid var(--linha);
+  }
+  .musica .play{
+    width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--card-2);
+    display:grid;place-items:center;font-size:.75rem;color:var(--texto);
+  }
+  .musica .info{flex:1;min-width:0}
+  .musica .info b{display:block;font-weight:600;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .musica .info small{color:var(--suave);font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+  .musica .info .estilo-tag{
+    font-size:.56rem;letter-spacing:.1em;font-weight:700;background:var(--card-2);color:var(--suave);
+    padding:.1rem .35rem;border-radius:4px;margin-left:.35rem;text-transform:uppercase;
+  }
+  .musica .fav{font-size:1.05rem;color:var(--suave);padding:.4rem;transition:transform .15s ease}
+  .musica .fav.on{color:var(--verde)}
+  .musica .fav:active{transform:scale(1.3)}
+  .vazio{color:var(--suave);font-size:.88rem;text-align:center;padding:2rem 1rem}
+  .mais{
+    display:block;width:100%;margin-top:1rem;padding:.8rem;border-radius:999px;
+    border:1px solid var(--linha);font-size:.85rem;font-weight:600;color:var(--suave);
+  }
+  .mais:hover{color:var(--texto);border-color:var(--suave)}
+
+  /* Setlist */
+  .setlist-box{background:var(--card);border:1px solid var(--linha);border-radius:var(--radius);padding:20px}
+  .setlist-box .topo{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem}
+  .setlist-box .topo .ico{
+    width:44px;height:44px;border-radius:12px;background:var(--verde-escuro);color:var(--verde);
+    display:grid;place-items:center;font-size:1.1rem;flex-shrink:0;
+  }
+  .setlist-box .topo b{display:block}
+  .setlist-box .topo small{color:var(--suave);font-size:.78rem}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1rem}
+  .form-grid label{font-size:.72rem;color:var(--suave);display:block}
+  .form-grid input,.form-grid select{
+    width:100%;margin-top:.3rem;background:var(--bg);border:1px solid var(--linha);color:var(--texto);
+    border-radius:10px;padding:.7rem .8rem;font:inherit;font-size:.9rem;outline:none;
+  }
+  .form-grid input:focus,.form-grid select:focus{border-color:var(--verde)}
+  .acoes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+  .btn-sec{
+    display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;border-radius:999px;
+    border:1px solid var(--linha);font-size:.85rem;font-weight:600;
+  }
+  .acoes .btn-verde{margin-top:0}
+
+  /* Sobre */
+  .sobre-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:1rem}
+  .sobre-card{background:var(--card);border:1px solid var(--linha);border-radius:var(--radius);padding:22px}
+  .sobre-card p{color:#c6ccc6;font-size:.95rem;margin-top:.7rem}
+  .servicos{list-style:none;display:grid;gap:.7rem;margin-top:.8rem}
+  .servicos li{display:flex;gap:.8rem;align-items:flex-start;font-size:.9rem}
+  .servicos i{color:var(--verde);width:20px;text-align:center;margin-top:.2rem}
+  .servicos small{display:block;color:var(--suave);font-size:.78rem}
+
+  /* Contato */
+  .contato{
+    background:linear-gradient(135deg,var(--verde-medio),var(--verde-escuro));border-radius:22px;
+    padding:30px 24px;border:1px solid #1d5a33;text-align:left;
+  }
+  .contato h2{font-size:clamp(1.7rem,5vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+  .contato p{color:#cfe9d7;margin-top:.6rem;max-width:460px}
+  .contato .redes{display:flex;gap:.6rem;margin-top:1.2rem;flex-wrap:wrap}
+  .contato .redes a{
+    display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:999px;
+    background:rgba(0,0,0,.25);font-size:.85rem;font-weight:600;
+  }
+  footer{color:#566056;font-size:.75rem;text-align:center;padding:30px 16px 20px}
+
+  /* ---------- BARRA INFERIOR ---------- */
+  .tabbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(18,20,18,.97);
+    border-top:1px solid var(--linha);display:flex;justify-content:space-around;
+    padding:8px 4px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(10px);
+  }
+  .tabbar a{
+    display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.62rem;color:var(--suave);
+    position:relative;padding:4px 8px;min-width:58px;
+  }
+  .tabbar a i{font-size:1.05rem}
+  .tabbar a.ativo{color:var(--texto)}
+  .tabbar a.ativo::before{
+    content:"";position:absolute;top:-9px;width:22px;height:3px;border-radius:3px;background:var(--verde);
+  }
+  .tabbar .badge{
+    position:absolute;top:0;right:12px;background:var(--verde);color:#062b14;font-size:.55rem;
+    font-weight:800;border-radius:999px;padding:0 .3rem;min-width:15px;text-align:center;
+  }
+
+  .toast{
+    position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);opacity:0;
+    background:var(--texto);color:#0e0f0e;font-size:.82rem;font-weight:600;
+    padding:.6rem 1rem;border-radius:999px;transition:all .25s ease;z-index:70;pointer-events:none;white-space:nowrap;
+  }
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media (max-width:760px){
+    .top-links{display:none}
+    .sobre-grid{grid-template-columns:1fr}
+    .vinil{width:220px;height:220px;right:-80px;opacity:.55}
+    .vinil::after{width:80px;height:80px;font-size:.55rem}
+  }
+  @media (max-width:420px){
+    .form-grid{grid-template-columns:1fr}
+    .btn-top span{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#inicio" class="brand">
+      <div class="brand-mark"><i class="fa-solid fa-guitar"></i></div>
+      <div><b>Cristiano Silvester</b><small>MÚSICO</small></div>
+    </a>
+    <nav class="top-links">
+      <a href="#estilos">Estilos</a>
+      <a href="#ocasioes">Ocasiões</a>
+      <a href="#repertorio">Repertório</a>
+      <a href="#setlist">Setlist</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+    <a class="btn-top" href="#contato"><i class="fa-brands fa-whatsapp"></i><span>Contratar</span></a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <div class="hero" id="inicio">
+    <div class="hero-top">
+      <div>
+        <div class="kicker verde">Seu próximo evento começa aqui</div>
+        <h1>Encontre a trilha<br>do seu evento.</h1>
+      </div>
+      <div class="vol"><span>VOL.</span><b>01</b></div>
+    </div>
+    <p class="lead">Voz e violão para bares, festas, casamentos e cultos. Veja tudo o que o Cristiano toca e monte o repertório do seu evento.</p>
+
+    <label class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="busca" type="search" placeholder="Buscar música ou artista..." autocomplete="off">
+      <span class="tag">BUSCAR</span>
+    </label>
+
+    <div class="banner">
+      <span class="pill">AO VIVO · VOZ E VIOLÃO</span>
+      <h2>Sua festa.<br>Com música de verdade.</h2>
+      <p>Você escolhe o clima. O Cristiano leva o som, o equipamento e a energia.</p>
+      <a href="#repertorio" class="btn-verde"><i class="fa-solid fa-play"></i> Ver repertório</a>
+      <div class="vinil"></div>
+      <div class="rodape"><span>REPERTÓRIO SEMPRE ATUALIZADO</span><em>ESTÉREO</em></div>
+    </div>
+
+    <div class="stats">
+      <div><b id="st-musicas">0</b><small>músicas no repertório</small></div>
+      <div><b id="st-artistas">0</b><small>artistas diferentes</small></div>
+      <div><b id="st-estilos">0</b><small>estilos musicais</small></div>
+    </div>
+  </div>
+
+  <!-- ESTILOS -->
+  <section id="estilos">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Um repertório para cada público</div>
+        <h2>Qual é a sua vibe?</h2>
+      </div>
+      <a href="#repertorio" class="link">Ver tudo <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="estilos" id="lista-estilos"></div>
+  </section>
+
+  <!-- OCASIÕES -->
+  <section id="ocasioes">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Escolha o clima, o show está pronto</div>
+        <h2>Pronto para o seu evento</h2>
+      </div>
+    </div>
+    <div class="chips" id="chips-ocasiao"></div>
+    <div class="ocasiao-info">
+      <span id="ocasiao-desc"></span>
+      <button id="add-ocasiao"><i class="fa-solid fa-plus"></i> Adicionar tudo ao setlist</button>
+    </div>
+    <ul class="lista" id="lista-ocasiao"></ul>
+  </section>
+
+  <!-- REPERTÓRIO -->
+  <section id="repertorio">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Tudo o que ele toca</div>
+        <h2 id="titulo-repertorio">Repertório completo</h2>
+      </div>
+      <span class="link" id="contagem"></span>
+    </div>
+    <div class="chips" id="chips-estilo"></div>
+    <ul class="lista" id="lista-repertorio" style="margin-top:.6rem"></ul>
+    <button class="mais" id="ver-mais">Ver mais músicas</button>
+  </section>
+
+  <!-- SETLIST -->
+  <section id="setlist">
+    <div class="sec-head">
+      <div>
+        <div class="kicker verde">Para quem vai contratar</div>
+        <h2>Monte o seu setlist</h2>
+      </div>
+    </div>
+    <div class="setlist-box">
+      <div class="topo">
+        <div class="ico"><i class="fa-solid fa-heart"></i></div>
+        <div>
+          <b>Músicas escolhidas: <span id="qtd-setlist">0</span></b>
+          <small>Toque no <i class="fa-regular fa-heart"></i> nas músicas para incluir. Fica salvo neste aparelho.</small>
+        </div>
+      </div>
+      <ul class="lista" id="lista-setlist"></ul>
+
+      <div class="form-grid">
+        <div><label>Seu nome<input id="f-nome" placeholder="Ex.: Ana"></label></div>
+        <div><label>Data do evento<input id="f-data" type="date"></label></div>
+        <div>
+          <label>Tipo de evento
+            <select id="f-tipo">
+              <option>Bar / Restaurante</option>
+              <option>Festa / Aniversário</option>
+              <option>Casamento</option>
+              <option>Igreja / Culto</option>
+              <option>Evento corporativo</option>
+              <option>Outro</option>
+            </select>
+          </label>
+        </div>
+        <div><label>Cidade<input id="f-cidade" placeholder="Ex.: Criciúma/SC"></label></div>
+      </div>
+      <div class="acoes">
+        <button class="btn-verde" id="enviar"><i class="fa-brands fa-whatsapp"></i> Pedir orçamento</button>
+        <button class="btn-sec" id="limpar"><i class="fa-solid fa-trash"></i> Limpar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Quem vai tocar</div>
+        <h2>Sobre o Cristiano</h2>
+      </div>
+    </div>
+    <div class="sobre-grid">
+      <div class="sobre-card">
+        <div class="kicker verde">Cristiano Silvester</div>
+        <p>Músico com anos de estrada tocando em bares, festas, casamentos e igrejas. Repertório variado, que vai do sertanejo ao rock nacional, sempre lendo o público para manter o clima certo do começo ao fim.</p>
+        <p>Leva o próprio equipamento de som e se adapta ao seu evento: do som ambiente tranquilo no jantar até a pista animada no fim da noite.</p>
+      </div>
+      <div class="sobre-card">
+        <div class="kicker">O que está incluso</div>
+        <ul class="servicos">
+          <li><i class="fa-solid fa-microphone"></i><div>Voz e violão ao vivo<small>Formato acústico, ideal para qualquer espaço</small></div></li>
+          <li><i class="fa-solid fa-volume-high"></i><div>Equipamento de som<small>Caixa, microfone e mesa inclusos</small></div></li>
+          <li><i class="fa-solid fa-list-check"></i><div>Repertório personalizado<small>Você escolhe as músicas pelo site</small></div></li>
+          <li><i class="fa-solid fa-ring"></i><div>Cerimônias<small>Entrada dos noivos, alianças e saída</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contato">
+      <div class="kicker" style="color:#cfe9d7">Agenda aberta</div>
+      <h2>Vamos fazer o seu<br>evento acontecer?</h2>
+      <p>Chame no WhatsApp para consultar datas e valores.</p>
+      <a class="btn-verde" id="btn-whats" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp</a>
+      <div class="redes">
+        <a href="https://instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://youtube.com/" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> YouTube</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="ano"></span> Cristiano Silvester · Músico</footer>
+
+<nav class="tabbar" id="tabbar">
+  <a href="#inicio" class="ativo"><i class="fa-solid fa-house"></i>Início</a>
+  <a href="#estilos"><i class="fa-solid fa-music"></i>Estilos</a>
+  <a href="#repertorio"><i class="fa-solid fa-list"></i>Repertório</a>
+  <a href="#setlist"><i class="fa-regular fa-heart"></i>Setlist<span class="badge" id="badge">0</span></a>
+  <a href="#contato"><i class="fa-brands fa-whatsapp"></i>Contato</a>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — edite aqui
+   ========================================================= */
+const WHATSAPP = "5548999999999"; // número com DDI + DDD, só números
+
+// Estilos: id, nome, frase curta e cores da arte
+const ESTILOS = [
+  {id:"sertanejo", nome:"Sertanejo",        frase:"Na estrada",       cor:"#9b8cf0", fundo:"#24203d"},
+  {id:"pagode",    nome:"Samba e Pagode",   frase:"Entre no ritmo",   cor:"#e88fb8", fundo:"#3a1f2c"},
+  {id:"mpb",       nome:"MPB",              frase:"Alma brasileira",  cor:"#a8d26b", fundo:"#253318"},
+  {id:"rock",      nome:"Rock Nacional",    frase:"Volume no talo",   cor:"#f0a65a", fundo:"#3a2614"},
+  {id:"romantica", nome:"Românticas",       frase:"Coração aberto",   cor:"#5fb8b0", fundo:"#16302e"},
+  {id:"forro",     nome:"Forró e Xote",     frase:"Pé de serra",      cor:"#d9cf6a", fundo:"#33301a"},
+  {id:"gospel",    nome:"Gospel",           frase:"Som que inspira",  cor:"#e0b27a", fundo:"#33271a"},
+  {id:"internacional", nome:"Internacional",frase:"Hits do mundo",    cor:"#7aa7f0", fundo:"#1a2640"},
+];
+
+// Ocasiões: quais estilos entram em cada uma
+const OCASIOES = [
+  {id:"bar",       nome:"No bar",        desc:"Clássicos para cantar junto",      estilos:["sertanejo","pagode","rock","mpb"]},
+  {id:"festa",     nome:"Na festa",      desc:"Animação do começo ao fim",        estilos:["sertanejo","pagode","forro","rock"]},
+  {id:"casamento", nome:"No casamento",  desc:"Cerimônia e recepção",             estilos:["romantica","mpb","internacional"]},
+  {id:"igreja",    nome:"Na igreja",     desc:"Louvor e adoração",                estilos:["gospel"]},
+];
+
+// Repertório: [música, artista, estilo]
+const MUSICAS = [
+  ["Evidências","Chitãozinho & Xororó","sertanejo"],
+  ["Página de Amigos","Chitãozinho & Xororó","sertanejo"],
+  ["Fio de Cabelo","Chitãozinho & Xororó","sertanejo"],
+  ["É o Amor","Zezé Di Camargo & Luciano","sertanejo"],
+  ["Pare","Zezé Di Camargo & Luciano","sertanejo"],
+  ["Estou Apaixonado","João Paulo & Daniel","sertanejo"],
+  ["Telefone Mudo","Trio Parada Dura","sertanejo"],
+  ["Cabecinha no Ombro","Leandro & Leonardo","sertanejo"],
+  ["Entre Tapas e Beijos","Leandro & Leonardo","sertanejo"],
+  ["Amo Noite e Dia","Jorge & Mateus","sertanejo"],
+  ["Logo Eu","Jorge & Mateus","sertanejo"],
+  ["Sosseguei","Jorge & Mateus","sertanejo"],
+  ["Ai Se Eu Te Pego","Michel Teló","sertanejo"],
+  ["Camaro Amarelo","Munhoz & Mariano","sertanejo"],
+  ["Infiel","Marília Mendonça","sertanejo"],
+  ["Supera","Marília Mendonça","sertanejo"],
+  ["Todo Mundo Vai Sofrer","Marília Mendonça","sertanejo"],
+  ["Medo Bobo","Maiara & Maraisa","sertanejo"],
+  ["10% ","Maiara & Maraisa","sertanejo"],
+  ["Cuida Bem Dela","Henrique & Juliano","sertanejo"],
+  ["Flor e o Beija-Flor","Henrique & Juliano","sertanejo"],
+  ["Liberdade Provisória","Henrique & Juliano","sertanejo"],
+  ["Batom de Cereja","Israel & Rodolffo","sertanejo"],
+  ["Ficha Limpa","Gusttavo Lima","sertanejo"],
+  ["Bloqueado","Gusttavo Lima","sertanejo"],
+  ["Erro Gostoso","Simone Mendes","sertanejo"],
+  ["Esqueça-me Se For Capaz","Marília Mendonça","sertanejo"],
+  ["Chalana","Almir Sater","sertanejo"],
+  ["Tocando em Frente","Almir Sater","sertanejo"],
+  ["Romaria","Renato Teixeira","sertanejo"],
+
+  ["Deixa Acontecer","Grupo Revelação","pagode"],
+  ["Tá Escrito","Grupo Revelação","pagode"],
+  ["Trem das Onze","Adoniran Barbosa","pagode"],
+  ["Deixa a Vida Me Levar","Zeca Pagodinho","pagode"],
+  ["Verdade","Zeca Pagodinho","pagode"],
+  ["Ainda É Tempo Pra Ser Feliz","Arlindo Cruz","pagode"],
+  ["O Show Tem Que Continuar","Fundo de Quintal","pagode"],
+  ["Cheia de Manias","Raça Negra","pagode"],
+  ["Cigana","Raça Negra","pagode"],
+  ["Me Leva Junto Com Você","Raça Negra","pagode"],
+  ["Essa Tal Liberdade","Só Pra Contrariar","pagode"],
+  ["Mineirinho","Só Pra Contrariar","pagode"],
+  ["Sorriso Aberto","Jorge Aragão","pagode"],
+  ["Buquê de Flores","Thiaguinho","pagode"],
+  ["Ousadia & Alegria","Thiaguinho","pagode"],
+  ["Pimpolho","Art Popular","pagode"],
+  ["Até Que Durou","Péricles","pagode"],
+  ["Camisa 10","Turma do Pagode","pagode"],
+
+  ["Garota de Ipanema","Tom Jobim","mpb"],
+  ["Aquarela","Toquinho","mpb"],
+  ["O Leãozinho","Caetano Veloso","mpb"],
+  ["Sozinho","Caetano Veloso","mpb"],
+  ["Andar com Fé","Gilberto Gil","mpb"],
+  ["Esperando na Janela","Gilberto Gil","mpb"],
+  ["Como Uma Onda","Lulu Santos","mpb"],
+  ["Anunciação","Alceu Valença","mpb"],
+  ["Pétala","Djavan","mpb"],
+  ["Oceano","Djavan","mpb"],
+  ["Velha Infância","Tribalistas","mpb"],
+  ["Já Sei Namorar","Tribalistas","mpb"],
+  ["Ainda Bem","Marisa Monte","mpb"],
+  ["Trevo (Tu)","Anavitória","mpb"],
+  ["Você Não Me Ensinou a Te Esquecer","Caetano Veloso","mpb"],
+  ["Ela É Carioca","Tom Jobim","mpb"],
+
+  ["Tempo Perdido","Legião Urbana","rock"],
+  ["Pais e Filhos","Legião Urbana","rock"],
+  ["Eduardo e Mônica","Legião Urbana","rock"],
+  ["Por Enquanto","Legião Urbana","rock"],
+  ["Primeiros Erros","Capital Inicial","rock"],
+  ["Natasha","Capital Inicial","rock"],
+  ["Lanterna dos Afogados","Os Paralamas do Sucesso","rock"],
+  ["Meu Erro","Os Paralamas do Sucesso","rock"],
+  ["Pro Dia Nascer Feliz","Barão Vermelho","rock"],
+  ["Exagerado","Cazuza","rock"],
+  ["Anna Júlia","Los Hermanos","rock"],
+  ["Do Seu Lado","Jota Quest","rock"],
+  ["Fácil","Jota Quest","rock"],
+  ["Só Os Loucos Sabem","Charlie Brown Jr.","rock"],
+  ["Céu Azul","Charlie Brown Jr.","rock"],
+  ["Proibida Pra Mim","Charlie Brown Jr.","rock"],
+  ["Mulher de Fases","Raimundos","rock"],
+  ["Epitáfio","Titãs","rock"],
+  ["É Preciso Saber Viver","Titãs","rock"],
+  ["Vou Deixar","Skank","rock"],
+  ["Ainda Gosto Dela","Skank","rock"],
+  ["Dias de Luta, Dias de Glória","Charlie Brown Jr.","rock"],
+  ["Ela Vai Voltar","Charlie Brown Jr.","rock"],
+
+  ["Me Namora","Edu Ribeiro","romantica"],
+  ["Tudo Que Você Quiser","Luan Santana","romantica"],
+  ["Meteoro","Luan Santana","romantica"],
+  ["Mais Que Amigos","Jorge & Mateus","romantica"],
+  ["Pra Você Guardei o Amor","Nando Reis","romantica"],
+  ["All Star","Nando Reis","romantica"],
+  ["Por Onde Andei","Nando Reis","romantica"],
+  ["Ainda Bem Que Você Chegou","Vanessa da Mata","romantica"],
+  ["Amor Pra Recomeçar","Frejat","romantica"],
+  ["Linda","Projota","romantica"],
+  ["Trem-Bala","Ana Vilela","romantica"],
+  ["Só Hoje","Jota Quest","romantica"],
+
+  ["Asa Branca","Luiz Gonzaga","forro"],
+  ["Xote das Meninas","Luiz Gonzaga","forro"],
+  ["Anjo de Mim","Falamansa","forro"],
+  ["Xote dos Milagres","Falamansa","forro"],
+  ["Rindo à Toa","Falamansa","forro"],
+  ["Respeita Januário","Luiz Gonzaga","forro"],
+  ["De Volta pro Aconchego","Elba Ramalho","forro"],
+  ["Chão de Giz","Zé Ramalho","forro"],
+  ["Admirável Gado Novo","Zé Ramalho","forro"],
+
+  ["Raridade","Anderson Freire","gospel"],
+  ["Ressuscita-me","Aline Barros","gospel"],
+  ["Sonda-me","Aline Barros","gospel"],
+  ["Lugar Secreto","Gabriela Rocha","gospel"],
+  ["Me Atraiu","Gabriela Rocha","gospel"],
+  ["Deus É Deus","Delino Marçal","gospel"],
+  ["A Casa É Sua","Casa Worship","gospel"],
+  ["Ninguém Explica Deus","Preto no Branco","gospel"],
+  ["Advogado Fiel","Bruna Karla","gospel"],
+  ["Porque Ele Vive","Harpa Cristã","gospel"],
+  ["Grandes Coisas","Fernandinho","gospel"],
+  ["Uma Nova História","Fernandinho","gospel"],
+
+  ["Perfect","Ed Sheeran","internacional"],
+  ["Thinking Out Loud","Ed Sheeran","internacional"],
+  ["A Thousand Years","Christina Perri","internacional"],
+  ["Hallelujah","Leonard Cohen","internacional"],
+  ["Stand By Me","Ben E. King","internacional"],
+  ["Can't Help Falling in Love","Elvis Presley","internacional"],
+  ["Wonderwall","Oasis","internacional"],
+  ["Knockin' on Heaven's Door","Bob Dylan","internacional"],
+  ["Imagine","John Lennon","internacional"],
+  ["Let It Be","The Beatles","internacional"],
+  ["Hey Jude","The Beatles","internacional"],
+  ["Have You Ever Seen the Rain","Creedence","internacional"],
+  ["Iris","Goo Goo Dolls","internacional"],
+  ["Shallow","Lady Gaga & Bradley Cooper","internacional"],
+].map(([titulo,artista,estilo],i)=>({id:i,titulo:titulo.trim(),artista,estilo}));
+
+/* ========================================================= */
+
+const $ = s => document.querySelector(s);
+const nomeEstilo = id => (ESTILOS.find(e=>e.id===id)||{}).nome || id;
+const norm = t => t.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+
+// ---- Setlist salvo no aparelho ----
+let setlist = [];
+try { setlist = JSON.parse(localStorage.getItem("cs-setlist")) || []; } catch(e){}
+const salvar = () => { try { localStorage.setItem("cs-setlist", JSON.stringify(setlist)); } catch(e){} };
+
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.tm); toast.tm = setTimeout(()=>t.classList.remove("show"), 1800);
+}
+
+function itemMusica(m, mostrarEstilo){
+  const on = setlist.includes(m.id);
+  return `<li class="musica">
+    <span class="play"><i class="fa-solid fa-music"></i></span>
+    <div class="info">
+      <b>${m.titulo}</b>
+      <small>${m.artista}${mostrarEstilo ? `<span class="estilo-tag">${nomeEstilo(m.estilo)}</span>` : ""}</small>
+    </div>
+    <button class="fav ${on?"on":""}" data-id="${m.id}" aria-label="Adicionar ao setlist">
+      <i class="fa-${on?"solid":"regular"} fa-heart"></i>
+    </button>
+  </li>`;
+}
+
+// ---- Arte geométrica de cada estilo ----
+function arte(e, i){
+  const c = e.cor, f = e.fundo;
+  const formas = [
+    `<rect width="100" height="100" fill="${f}"/><g stroke="${c}" stroke-width="12"><path d="M-10 40 L40 -10 M-10 80 L80 -10 M10 110 L110 10 M50 110 L110 50"/></g>`,
+    `<rect width="100" height="100" fill="${c}"/><circle cx="25" cy="25" r="22" fill="${f}"/><circle cx="75" cy="75" r="22" fill="${f}"/><rect x="40" y="10" width="20" height="80" rx="10" fill="${f}"/>`,
+    `<rect width="100" height="100" fill="${c}"/><path d="M20 100 V45 a30 30 0 0 1 60 0 V100" fill="none" stroke="${f}" stroke-width="7"/><path d="M35 100 V50 a15 15 0 0 1 30 0 V100" fill="none" stroke="${f}" stroke-width="7"/>`,
+    `<rect width="100" height="100" fill="${f}"/><g fill="${c}"><rect x="10" y="10" width="35" height="35" rx="6" transform="rotate(20 27 27)"/><rect x="55" y="55" width="35" height="35" rx="6" transform="rotate(20 72 72)"/><rect x="55" y="8" width="30" height="30" rx="15"/><rect x="12" y="60" width="30" height="30" rx="15"/></g>`,
+  ];
+  return `<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">${formas[i % formas.length]}</svg>`;
+}
+
+// ---- Estados ----
+let estiloAtivo = "todos";
+let ocasiaoAtiva = OCASIOES[0].id;
+let busca = "";
+let limite = 20;
+
+function renderEstilos(){
+  $("#lista-estilos").innerHTML = ESTILOS.map((e,i)=>{
+    const qtd = MUSICAS.filter(m=>m.estilo===e.id).length;
+    return `<button class="estilo ${estiloAtivo===e.id?"ativo":""}" data-estilo="${e.id}">
+      <div class="arte">${arte(e,i)}<span class="num">${String(i+1).padStart(2,"0")}</span></div>
+      <small>${e.frase}</small>
+      <b>${e.nome}</b>
+      <div class="rodape"><span>${qtd} músicas</span><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+    </button>`;
+  }).join("");
+}
+
+function renderOcasiao(){
+  $("#chips-ocasiao").innerHTML = OCASIOES.map(o =>
+    `<button class="chip ${o.id===ocasiaoAtiva?"ativo":""}" data-ocasiao="${o.id}">${o.nome}</button>`).join("");
+  const o = OCASIOES.find(x=>x.id===ocasiaoAtiva);
+  // pega algumas de cada estilo da ocasião
+  const lista = o.estilos.flatMap(est => MUSICAS.filter(m=>m.estilo===est).slice(0, Math.ceil(12/o.estilos.length)));
+  $("#ocasiao-desc").textContent = `${o.desc} · ${o.estilos.map(nomeEstilo).join(", ")}`;
+  $("#lista-ocasiao").innerHTML = lista.map(m=>itemMusica(m,true)).join("");
+  $("#add-ocasiao").dataset.ids = lista.map(m=>m.id).join(",");
+}
+
+function renderRepertorio(){
+  const chips = [{id:"todos",nome:"Todos"}, ...ESTILOS];
+  $("#chips-estilo").innerHTML = chips.map(e=>{
+    const qtd = e.id==="todos" ? MUSICAS.length : MUSICAS.filter(m=>m.estilo===e.id).length;
+    return `<button class="chip ${estiloAtivo===e.id?"ativo":""}" data-estilo="${e.id}">${e.nome}<span class="qtd">${qtd}</span></button>`;
+  }).join("");
+
+  const q = norm(busca);
+  let lista = MUSICAS.filter(m =>
+    (estiloAtivo==="todos" || m.estilo===estiloAtivo) &&
+    (!q || norm(m.titulo).includes(q) || norm(m.artista).includes(q))
+  );
+  $("#titulo-repertorio").textContent = busca ? `Resultados para “${busca}”`
+    : estiloAtivo==="todos" ? "Repertório completo" : nomeEstilo(estiloAtivo);
+  $("#contagem").textContent = `${lista.length} músicas`;
+  $("#lista-repertorio").innerHTML = lista.length
+    ? lista.slice(0,limite).map(m=>itemMusica(m, estiloAtivo==="todos")).join("")
+    : `<li class="vazio">Nenhuma música encontrada. Peça pelo WhatsApp que ele pode preparar!</li>`;
+  $("#ver-mais").style.display = lista.length > limite ? "block" : "none";
+}
+
+function renderSetlist(){
+  const itens = setlist.map(id=>MUSICAS[id]).filter(Boolean);
+  $("#qtd-setlist").textContent = itens.length;
+  $("#badge").textContent = itens.length;
+  $("#badge").style.display = itens.length ? "" : "none";
+  $("#lista-setlist").innerHTML = itens.length
+    ? itens.map(m=>itemMusica(m,true)).join("")
+    : `<li class="vazio">Nenhuma música ainda. Escolha as músicas do seu evento no repertório.</li>`;
+}
+
+function renderTudo(){ renderEstilos(); renderOcasiao(); renderRepertorio(); renderSetlist(); }
+
+// ---- Eventos ----
+document.addEventListener("click", ev=>{
+  const fav = ev.target.closest(".fav");
+  if(fav){
+    const id = +fav.dataset.id;
+    if(setlist.includes(id)){ setlist = setlist.filter(x=>x!==id); toast("Removida do setlist"); }
+    else { setlist.push(id); toast("Adicionada ao setlist"); }
+    salvar(); renderTudo(); return;
+  }
+  const est = ev.target.closest("[data-estilo]");
+  if(est){
+    estiloAtivo = est.dataset.estilo; limite = 20;
+    renderEstilos(); renderRepertorio();
+    if(est.classList.contains("estilo")) $("#repertorio").scrollIntoView({behavior:"smooth"});
+    return;
+  }
+  const oc = ev.target.closest("[data-ocasiao]");
+  if(oc){ ocasiaoAtiva = oc.dataset.ocasiao; renderOcasiao(); }
+});
+
+$("#add-ocasiao").addEventListener("click", e=>{
+  const ids = e.currentTarget.dataset.ids.split(",").map(Number);
+  ids.forEach(id=>{ if(!setlist.includes(id)) setlist.push(id); });
+  salvar(); renderTudo(); toast(`${ids.length} músicas no setlist`);
+});
+
+$("#ver-mais").addEventListener("click", ()=>{ limite += 20; renderRepertorio(); });
+
+$("#busca").addEventListener("input", e=>{
+  busca = e.target.value.trim(); estiloAtivo = "todos"; limite = 20;
+  renderEstilos(); renderRepertorio();
+});
+$("#busca").addEventListener("keydown", e=>{
+  if(e.key==="Enter") $("#repertorio").scrollIntoView({behavior:"smooth"});
+});
+
+$("#limpar").addEventListener("click", ()=>{
+  if(!setlist.length) return;
+  setlist = []; salvar(); renderTudo(); toast("Setlist limpo");
+});
+
+$("#enviar").addEventListener("click", ()=>{
+  const nome = $("#f-nome").value.trim();
+  const data = $("#f-data").value ? $("#f-data").value.split("-").reverse().join("/") : "a definir";
+  const tipo = $("#f-tipo").value;
+  const cidade = $("#f-cidade").value.trim() || "a definir";
+  const musicas = setlist.map(id=>MUSICAS[id]).filter(Boolean);
+  let msg = `Olá Cristiano! ${nome ? "Sou " + nome + ". " : ""}Gostaria de um orçamento.\n\n`
+          + `*Evento:* ${tipo}\n*Data:* ${data}\n*Cidade:* ${cidade}\n`;
+  if(musicas.length){
+    msg += `\n*Músicas escolhidas (${musicas.length}):*\n` + musicas.map((m,i)=>`${i+1}. ${m.titulo} – ${m.artista}`).join("\n");
+  }
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+$("#btn-whats").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá Cristiano! Vi seu site e gostaria de consultar uma data.")}`;
+
+// ---- Barra inferior: marca a seção visível ----
+const abas = [...document.querySelectorAll(".tabbar a")];
+const secoes = abas.map(a=>document.querySelector(a.getAttribute("href")));
+window.addEventListener("scroll", ()=>{
+  let atual = 0;
+  secoes.forEach((s,i)=>{ if(s.getBoundingClientRect().top < window.innerHeight*0.4) atual = i; });
+  abas.forEach((a,i)=>a.classList.toggle("ativo", i===atual));
+}, {passive:true});
+
+// ---- Números ----
+$("#st-musicas").textContent = MUSICAS.length;
+$("#st-artistas").textContent = new Set(MUSICAS.map(m=>m.artista)).size;
+$("#st-estilos").textContent = ESTILOS.length;
+$("#ano").textContent = new Date().getFullYear();
+
+renderTudo();
+</script>
+</body>
+</html>
